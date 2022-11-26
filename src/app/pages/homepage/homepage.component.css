@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+  font-size: 60px;
+}
+.waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
+  
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+
+.box1{
+    border-radius: 1em;
+    margin-top: 10vh;
+    background-color: #18d7a1;
+    margin-right: 1vh;
+    text-decoration: none;
+    color: #000;
+}
+
+.box2{
+    border-radius: 1em;
+    margin-top: 10vh;
+    background-color: #18d7a1;
+    margin-left: 1vh;
+    text-decoration: none;
+    color: #000;
+}
+
+.box3{
+    border-radius: 1em;
+    margin-top: 3vh;
+    background-color:#18d7a1;
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+
+

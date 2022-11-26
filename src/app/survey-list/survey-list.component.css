@@ -1,0 +1,41 @@
+.create{
+    border-style: dashed;
+    border-radius: 15px 50px;
+}
+
+.newsurvey{
+    animation-name: newsurvey;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+@keyframes newsurvey{
+    0% {
+        color: #069988;
+        transform: scale(1);
+      }
+    
+      25% {
+        color: #069988;
+        transform: scale(1.025);
+      }
+    
+      50% {
+        color: #069988;
+        transform: scale(1.05);
+      }
+    
+      75% {
+        color: #01ba8c;
+        transform: scale(1.025);
+      }
+    
+      100% {
+        color: #00ab6a;
+        transform: scale(1);
+      }
+}
+
+.survey-list{
+    cursor: pointer;
+}

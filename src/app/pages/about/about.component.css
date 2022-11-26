@@ -1,0 +1,14 @@
+img{
+    display: block;
+    width: 15vh;
+    float: inline-end;
+}
+
+.imgwrap{
+    display: flex;
+    justify-content: flex-end;
+}
+p{
+    color: #18d7a1;
+    font-weight: bolder;
+}
