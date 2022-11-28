@@ -1,11 +1,13 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SurveyModule } from './model/model.module';
+import { ModelModule } from './model/model.module';
 import { AboutComponent } from './pages/about/about.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { InfoComponent } from './pages/info/info.component';
 import { LoginComponent } from './pages/login/login.component';
-import { SurveyListComponent } from './survey-list/survey-list.component';
+import { SurveyComponent } from './pages/survey/survey.component';
+import { SurveyListComponent } from './pages/list/survey-list.component';
+import { CreateComponent } from './pages/create/create.component';
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
@@ -13,11 +15,13 @@ const routes: Routes = [
   {path:'about',component:AboutComponent},
   {path:'project',component:InfoComponent},
   {path:'survey', component:SurveyListComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'survey-detail',component:SurveyComponent},
+  {path:'survey/add',component:CreateComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),SurveyModule],
+  imports: [RouterModule.forRoot(routes),ModelModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

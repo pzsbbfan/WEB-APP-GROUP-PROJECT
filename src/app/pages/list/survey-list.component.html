@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" id="box">
     <div class="row justify-content-center mt-5">
         <div class="col col-lg-4 mt-5">
             <h1 class="mt-3" style="color: rgb(154, 93, 112);">Available Surveys</h1>
@@ -7,7 +7,7 @@
         <div class="col col-lg-4 mt-5 pt-1 pb-1 create">
             <div class="row">
                 <div class="col col-lg-2">
-                    <a  href="/survey-list/add/"><i
+                    <a  href="/survey/add/"><i
                         class="fas fa-plus-circle fa-5x newsurvey"
                         style=" cursor: pointer; cursor: hand; margin-right: 50px;"></i>
                     </a>
@@ -21,7 +21,7 @@
         <div class="row mt-5" >
             <!--TODO change link!!-->
             <div class="col-6 mt-5 survey-list" *ngFor="let survey of products"
-            onclick="window.location.href='/home'">
+            (click)="getSurvey(survey.title)">
                 
                 <div class="card text-center popup"
                     style="background-color: transparent; margin-bottom: 75px;" class="d-flex">

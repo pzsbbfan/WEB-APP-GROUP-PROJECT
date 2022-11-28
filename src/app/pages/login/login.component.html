@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-5">
+            <p class="fs-2 mt-5" style="font-family: Courier; text-align:center; color:#1b7ced;">
+                Please Login
+            </p>
+
+            <form method="POST" autocomplete="off">
+
+                <fieldset class="form-group" style="margin-bottom:15px;">
+                    <input type="text" class="form-control" id="username"
+                        placeholder="Enter username" name="username" required autofocus>
+                </fieldset>
+
+                <fieldset class="form-group" style="margin-bottom:15px;">
+
+                    <input type="password" class="form-control" id="password"
+                        placeholder="Enter password" name="password" required>
+                </fieldset>
+
+                <p style="color: rgb(45, 138, 141);">Don't have an account? <a
+                        href="/register">Join Now</a></p>
+
+                <fieldset class="form-group text-right">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="/"><input type="button" class="btn btn-warning"
+                            value="Cancel"></a>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,11 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AboutComponent } from './pages/about/about.component';
 import { InfoComponent } from './pages/info/info.component';
 import { LoginComponent } from './pages/login/login.component';
-import { SurveyListComponent } from './survey-list/survey-list.component';
+import { SurveyComponent } from './pages/survey/survey.component';
+import { FormsModule } from '@angular/forms';
+import { SurveyListComponent } from './pages/list/survey-list.component';
+import { CreateComponent } from './pages/create/create.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +24,15 @@ import { SurveyListComponent } from './survey-list/survey-list.component';
     AboutComponent,
     InfoComponent,
     LoginComponent,
-    SurveyListComponent
+    SurveyComponent,
+    SurveyListComponent,
+    CreateComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

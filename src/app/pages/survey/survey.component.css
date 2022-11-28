@@ -1,0 +1,30 @@
+.list{
+    border-radius: 15px 50px;
+    background-color:rgb(184, 187, 207) ;
+    
+}
+
+.choice:hover{
+    background-color: black;
+    color: white;
+}
+.choice{
+    margin-top: 2vh;
+    border-radius: 12px;
+}
+
+input{
+    display: none;
+}
+
+label{
+    cursor: pointer;
+    cursor: hand;
+    display: inline-block;
+    color: black;
+    border: 1px solid;
+}
+input:checked + label {
+    background: black;
+    color: white;
+}

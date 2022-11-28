@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col col-lg-5 fs-1 offset-1 mt-5" style="color: rgb(154, 93, 112);">
+            {{survey.title}}
+        </div>
+        <div class="col fs-1 mt-5"></div>
+    </div>
+    
+
+    <div class="row justify-content-center text-center fs-3 mt-5 ">
+        <div *ngFor="let e of survey.question" class="col col-lg-10 mt-5 list"
+        style="color:  rgb(154, 93, 112);">{{e}}
+            <div class="row mt-1">
+                <input class="col-lg-1" type="radio" id="age1" name="age" value="30">
+                <label class="col-lg-1 offset-2 choice" for="age1">True</label><br>
+                <input class="col-lg-1" type="radio" id="age2" name="age" value="60">
+                <label class="col-lg-1 offset-6 choice" for="age2">False</label><br>  
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col-1">
+          <a class="btn btn-primary btn-lg" style="margin-bottom: 50px; margin-top: 50px;"
+            type="submit" href="/survey">
+            <i class="fas fa-edit"></i> Submit</a>
+        </div>
+        <div class="col-1">
+          <a href="/survey" style="margin-bottom: 50px; margin-top: 50px;"
+            class="btn btn-warning btn-lg">
+            <i class="fas fa-undo"></i> Cancel</a>
+        </div>
+    </div>
+</div>
+
+<!--<button class="col col-lg-2 offset-1 btn-sm choice">True</button>
+                <button class="col col-lg-2 offset-6 btn-sm choice">False</button>-->
