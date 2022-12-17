@@ -6,7 +6,7 @@
               <div formGroupName="surveyDetail">
                 <label style="color: rgb(0, 141, 131);" class="h5" for="NameTextField">Please name the new survey. Name
                   must be unique.</label>
-                <input type="text" id="NameTextField" placeholder="Survey Name"
+                <input type="text" id="NameTextField" placeholder="{{survey.title}}"
                 formControlName="title">
                 <div >
                   <span *ngIf="!reactiveForm.get('surveyDetail.title').valid && reactiveForm.get('surveyDetail.title').touched" style="color: red;">
@@ -44,7 +44,7 @@
               <div formArrayName="question">
                 <ng-container *ngFor="let q of reactiveForm.get('question')['controls']
                 ;index as i">
-                  <input type="text" placeholder="question{{i+1}}" formControlName="{{i}}">
+                  <input type="text" formControlName="{{i}}">
                 </ng-container>
                 <button (click)="addQuestion()">+ Add Question</button>
               </div>
@@ -53,7 +53,7 @@
               <button class="btn btn-primary mt-5" type="submit">
                 <i class="fas fa-edit"></i> Submit</button>
 
-              <a href="/survey" class="btn btn-warning mt-5">
+              <a href="/survey/table" class="btn btn-warning mt-5">
                 <i class="fas fa-undo"></i> Cancel</a>
                           
             </form>

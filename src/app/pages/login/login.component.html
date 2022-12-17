@@ -5,19 +5,24 @@
                 Please Login
             </p>
 
-            <form method="POST" autocomplete="off">
+            <form #form="ngForm" (ngSubmit)="authenticate(form)" autocomplete="off">
 
-                <fieldset class="form-group" style="margin-bottom:15px;">
-                    <input type="text" class="form-control" id="username"
-                        placeholder="Enter username" name="username" required autofocus>
+                <fieldset class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control"
+                    [(ngModel)]="user.username" 
+                    name="username" placeholder="Enter Username"
+                    id="username" required autofocus autocomplete="off">
                 </fieldset>
 
-                <fieldset class="form-group" style="margin-bottom:15px;">
-
-                    <input type="password" class="form-control" id="password"
-                        placeholder="Enter password" name="password" required>
+                <fieldset class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control"
+                    [(ngModel)]="user.password" 
+                    name="password" placeholder="Enter Password"
+                    id="password" required autofocus autocomplete="off">
                 </fieldset>
-
+                
                 <p style="color: rgb(45, 138, 141);">Don't have an account? <a
                         href="/register">Join Now</a></p>
 

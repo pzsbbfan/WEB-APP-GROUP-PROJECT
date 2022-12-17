@@ -24,7 +24,11 @@ label{
     color: black;
     border: 1px solid;
 }
+
 input:checked + label {
     background: black;
     color: white;
 }
+
+
+

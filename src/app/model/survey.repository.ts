@@ -1,21 +1,28 @@
 import {Injectable} from '@angular/core';
 import { Survey } from './survey.model';
-import { StaticDataSource } from './static.datasource';
+import { RestDataSource } from './rest.datasource';
+import { Observable } from 'rxjs';
+import { selectedSurvey } from './selected.model';
+import { submitSurvey } from './submittedSurvey.model';
 
 @Injectable()
 export class SurveyRepository
 {
     private surveys:Survey[] = [];
-    private types : string[]=[];
+
+   
+
+    public submittedSurvey: submitSurvey = new submitSurvey;
+    
     public selectedSurvey : Survey = new Survey;
 
-    constructor (private dataSource : StaticDataSource)
+    constructor (private dataSource : RestDataSource)
     {
-        dataSource.getSurveys().subscribe(data=>{
+        dataSource.getSurvey().subscribe(data=>{
             this.surveys = data;
-            this.types = data.map(p=>p.type!)
-            .filter((t,index,array)=>array.indexOf(t)===index).sort();
         });
+
+  
     }
     getSurveys(type:string = null!):Survey[]
     {
@@ -23,14 +30,38 @@ export class SurveyRepository
         return this.surveys.filter(s=>type==null||type===s.type);
     }
 
-    getSurvey(title?:string):Survey
+
+
+    getSurvey(id:number):Survey
     {
-        return this.surveys.find(t=>t.title === title)!;
+        return this.surveys.find(t=>t._id === id)!;
     }
 
-    getTypes():string[]
+
+    saveSurvey(survey:selectedSurvey):Observable<Survey>
     {
-        return this.types;
+        return this.dataSource.saveSurvey(survey);
+    }
+
+    saveSubmittedSurvey(submit:submitSurvey):Observable<submitSurvey>
+    {
+        return this.dataSource.saveSubmittedSurvey(submit);
+    }
+
+    deleteSurvey(deletedSurveyID:number):void
+    {
+        this.dataSource.deleteSurvey(deletedSurveyID).subscribe(survey=>{
+            this.surveys.splice(this.surveys.findIndex(s=>s._id ===deletedSurveyID),1);
+        })
+    }
+
+    updateSurvey(savedSurvey:Survey):void
+    {
+            console.log(savedSurvey._id);
+            this.dataSource.updateSurvey(savedSurvey).subscribe(book =>{
+                this.surveys.splice(this.surveys.findIndex(b=>b._id ===savedSurvey._id),1,savedSurvey);
+            });
+     
     }
 
 }

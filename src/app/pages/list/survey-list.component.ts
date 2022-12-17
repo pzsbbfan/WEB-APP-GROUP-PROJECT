@@ -17,8 +17,7 @@ export class SurveyListComponent
   
   constructor(private repository: SurveyRepository,
     private connectService:ConnectService,
-    private router:Router
-)
+    private router:Router,)
   {
     
   }
@@ -32,17 +31,15 @@ export class SurveyListComponent
   get products(): Survey[]
   {
     return this.repository.getSurveys();
+    //return this.repository.getSurveys();
   }
   
-  get types(): string[]
-  {
-    return this.repository.getTypes();
-  }
 
 
-  getSurvey(title?:string):void
+
+  getSurvey(id:number):void
   {
-    this.survey = this.repository.getSurvey(title);
+    this.survey = this.repository.getSurvey(id);
     this.connectService.selectedSurvey = this.survey;
     this.router.navigateByUrl('/survey-detail')
   }
